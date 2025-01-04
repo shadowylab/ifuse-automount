@@ -1,0 +1,18 @@
+[package]
+name = "ifuse-automount"
+version = "0.1.0"
+edition = "2021"
+authors = ["Yuki Kishimoto <yukikishimoto@protonmail.com>"]
+homepage = "https://github.com/shadowylab/ifuse-automount"
+repository = "https://github.com/shadowylab/ifuse-automount.git"
+license = "MIT"
+publish = false
+
+[dependencies]
+dirs = { git = "https://github.com/dirs-dev/dirs-rs", rev = "1c2e3efad531aa67a5656eaedf53fdb8fa9094f7" }
+rusb = { git = "https://github.com/a1ien/rusb", rev = "cd95bb7ba71d0c1045d2765372fd1b342d7cc3b1" }
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
